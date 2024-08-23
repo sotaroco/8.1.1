@@ -27,8 +27,11 @@ fetch(DATA_URL)
     }
     return response.json();
   })
+  // Accedemos a la propiedad students, el array que queremos visualizar
   .then(data => {
-    showData(data);
+    const students = data.students;
+    console.log("Datos recibidos:", students);
+    showData(students);
   })
   .catch(error => {
     console.error("Hubo un problema con la solicitud Fetch:", error);
